@@ -28,7 +28,7 @@ async function bootstrap() {
 	createSwagger(app);
 	app.enableCors();
 	await app.listen(PORT, () => {
-		Logger.log(`服务已经启动,接口请访问:http://localhost:${PORT}`);
+		Logger.log(`服务已经启动,接口请访问::http://localhost:${PORT}`);
 		Logger.log(`swagger已经启动,文档请访问:http://localhost:${PORT}${PREFIX}`);
 	});
 }
