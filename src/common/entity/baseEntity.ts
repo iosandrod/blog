@@ -4,7 +4,6 @@ import { Entity, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn, Del
 export class BaseEntity {
 	@PrimaryGeneratedColumn()
 	id: number;
-
 	@CreateDateColumn({
 		type: 'datetime',
 		length: 0,
@@ -13,7 +12,6 @@ export class BaseEntity {
 		comment: '创建时间',
 	})
 	createdAt: Date;
-
 	@UpdateDateColumn({
 		type: 'datetime',
 		length: 0,
@@ -22,7 +20,6 @@ export class BaseEntity {
 		comment: '更新时间',
 	})
 	updatedAt: Date;
-
 	@DeleteDateColumn({
 		type: 'datetime',
 		length: 0,

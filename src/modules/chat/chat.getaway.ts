@@ -1,6 +1,6 @@
 import { CollectEntity } from './../collect/collect.entity';
-import { RoomEntity } from './room.entity';
-import { UserEntity } from './../user/user.entity';
+import { RoomEntity } from '../../entities/room.entity';
+import { UserEntity } from '../../entities/user.entity';
 import { MusicService } from './../music/music.service';
 import { MusicEntity } from './../music/music.entity';
 import { ConnectedSocket, MessageBody, SubscribeMessage, WebSocketGateway, WebSocketServer } from '@nestjs/websockets';
@@ -11,7 +11,7 @@ import { formatOnlineUser } from 'src/utils/tools';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { getRandomIntInclusive } from '../../constant/avatar';
-import { MessageEntity } from './message.entity';
+import { MessageEntity } from '../../entities/message.entity';
 import { getTimeSpace } from '../../utils/tools';
 /**
  * @desc ws

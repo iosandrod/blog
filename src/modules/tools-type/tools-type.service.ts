@@ -1,6 +1,6 @@
-import { ToolsEntity } from './../tools/tools.entity';
+import { ToolsEntity } from '../../entities/tools.entity';
 import { Repository, In } from 'typeorm';
-import { ToolsTypeEntity } from './tools-type.entity';
+import { ToolsTypeEntity } from '../../entities/tools-type.entity';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 

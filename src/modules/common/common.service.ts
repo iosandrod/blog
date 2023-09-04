@@ -1,7 +1,7 @@
-import { TagEntity } from './../tag/tag.entity';
-import { TypeEntity } from './../type/type.entity';
+import { TagEntity } from '../../entities/tag.entity';
+import { TypeEntity } from '../../entities/type.entity';
 import { In, Repository } from 'typeorm';
-import { UserEntity } from './../user/user.entity';
+import { UserEntity } from '../../entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';
 import MergeArticleInfo from './type';

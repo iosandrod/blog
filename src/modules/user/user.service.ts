@@ -1,13 +1,14 @@
 import { MailerService } from '@nest-modules/mailer';
 import { VerifyEntity } from './../verify/verify.entity';
 import { randomAvatar } from './../../constant/avatar';
-import { UserEntity } from './user.entity';
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { UserEntity } from '../../entities/user.entity';
+import { HttpException, HttpStatus, Injectable, Post } from '@nestjs/common';
 import { hashSync, compareSync } from 'bcryptjs';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, In, Like } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
 import { randomCode } from 'src/utils/tools';
+import { EntityManager, getManager } from 'typeorm';
 
 @Injectable()
 export class UserService {
@@ -18,7 +19,7 @@ export class UserService {
 		private readonly VerifyModle: Repository<VerifyEntity>,
 		private readonly jwtService: JwtService,
 		private readonly mailerService: MailerService,
-	) { }
+	) {}
 
 	/**
 	 * @desc 账号注册
@@ -35,12 +36,14 @@ export class UserService {
 		const u: any = await this.UserModel.findOne({
 			where: [{ username }, { email }],
 		});
+		debugger;
 		if (u) {
 			const tips = username == u.username ? '用户名' : '邮箱';
 			throw new HttpException({ message: `该${tips}已经存在了！` }, HttpStatus.BAD_REQUEST);
 		}
 		!isUseEmailVer && (params.status = 0); // 使用邮箱验证的情况 默认账号是冻结状态
-		const newUser = await this.UserModel.save(params);
+		// const newUser = await this.UserModel.save(params);
+		const newUser = await this.UserModel.insert(params);
 		/* 需要邮箱验证 */
 		if (!isUseEmailVer) {
 			const code = randomCode(8);
@@ -78,6 +81,7 @@ export class UserService {
 		const u: any = await this.UserModel.findOne({
 			where: [{ username }, { email: username }],
 		});
+		//判断用户是否存在
 		if (!u) {
 			throw new HttpException('该用户不存在！', HttpStatus.BAD_REQUEST);
 		}
@@ -126,6 +130,7 @@ export class UserService {
 		const { page = 1, pageSize = 10, role } = params;
 		const where: any = {};
 		role && (where.role = In(role));
+		//find的参数
 		const rows = await this.UserModel.find({
 			order: { id: 'DESC' },
 			where,
@@ -220,5 +225,14 @@ export class UserService {
 				HttpStatus.BAD_REQUEST,
 			);
 		}
+	}
+	async userTest() {
+		const managers = getManager();
+		// const article=managers.
+		// const allUsers=managers.query('select * from ')
+		// const allUser = await managers.find(UserEntity);
+		const someUser = await managers.find(UserEntity, { cache: true, where: [{ username: 'admin' }] });
+
+		return someUser;
 	}
 }

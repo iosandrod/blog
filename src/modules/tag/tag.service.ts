@@ -1,6 +1,6 @@
-import { ArticleEntity } from './../article/article.entity';
+import { ArticleEntity } from '../../entities/article.entity';
 import { Repository } from 'typeorm';
-import { TagEntity } from './tag.entity';
+import { TagEntity } from '../../entities/tag.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 

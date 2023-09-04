@@ -1,5 +1,5 @@
-import { ArticleEntity } from './../article/article.entity';
-import { TypeEntity } from './type.entity';
+import { ArticleEntity } from '../../entities/article.entity';
+import { TypeEntity } from '../../entities/type.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { TypeController } from './type.controller';

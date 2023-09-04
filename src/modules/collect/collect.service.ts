@@ -1,4 +1,4 @@
-import { ArticleEntity } from './../article/article.entity';
+import { ArticleEntity } from '../../entities/article.entity';
 import { getNotEmptyKey } from './../../utils/tools';
 import { InjectRepository } from '@nestjs/typeorm';
 import { collectTypeMap, collectModuleMap } from './../../constant/collec';

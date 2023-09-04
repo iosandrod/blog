@@ -17,12 +17,12 @@ const PREFIX = process.env.PREFIX;
 
 async function bootstrap() {
 	const app = await NestFactory.create<NestExpressApplication>(AppModule);
-	app.setGlobalPrefix('/api');//设置全局前缀 /api
-	app.useGlobalPipes(new ValidationPipe());//校验
-	app.useGlobalInterceptors(new TransformInterceptor());//全局的错误处理
+	app.setGlobalPrefix('/api'); //设置全局前缀 /api
+	app.useGlobalPipes(new ValidationPipe()); //校验
+	app.useGlobalInterceptors(new TransformInterceptor()); //全局的错误处理
 	app.useGlobalFilters(new HttpExceptionFilter()); //全局
-	app.useGlobalGuards(new AuthGuard());//全局守卫
-	app.useWebSocketAdapter(new IoAdapter(app));//使用socket
+	app.useGlobalGuards(new AuthGuard()); //全局守卫
+	app.useWebSocketAdapter(new IoAdapter(app)); //使用socket
 	app.setBaseViewsDir(join(__dirname, '..', 'views'));
 	app.setViewEngine('ejs');
 	createSwagger(app);

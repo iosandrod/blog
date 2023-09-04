@@ -2,7 +2,7 @@ import { VerifyEntity } from './../verify/verify.entity';
 import { LocalStrategy } from './local.strategy';
 import { JwtStrategy } from './jwt.strategy';
 import { JwtModule } from '@nestjs/jwt';
-import { UserEntity } from './user.entity';
+import { UserEntity } from '../../entities/user.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DynamicModule, Module } from '@nestjs/common';
 import { UserController } from './user.controller';
@@ -26,8 +26,8 @@ export class UserModule {
 	static register(): DynamicModule {
 		return {
 			module: UserModule,
-			providers: [],//提供者
-			exports: []
-		}
+			providers: [], //提供者
+			exports: [],
+		};
 	}
 }

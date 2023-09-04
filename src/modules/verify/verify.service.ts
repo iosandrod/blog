@@ -1,4 +1,4 @@
-import { UserEntity } from './../user/user.entity';
+import { UserEntity } from '../../entities/user.entity';
 import { VerifyEntity } from './verify.entity';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Repository } from 'typeorm';

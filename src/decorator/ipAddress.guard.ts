@@ -10,7 +10,6 @@ export const IpAddress = createParamDecorator(async (data: unknown, ctx: Executi
 	if (ip.substr(0, 7) == '::ffff:') {
 		ip = ip.substr(7);
 	}
-
 	console.log(ip, '最后拿到的ip');
 	// ip='139.226.99.52'
 	const url = `https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?query=%22+${ip}+%22&co=&resource_id=6006&t=1555898284898&ie=utf8&oe=utf8&format=json&tn=baidu`;

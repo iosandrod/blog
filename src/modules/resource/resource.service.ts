@@ -1,6 +1,6 @@
 import { Like } from 'typeorm';
-import { ResourceTypeEntity } from '../resource-type/resource-type.entity';
-import { ResourceEntity } from './resource.entity';
+import { ResourceTypeEntity } from '../../entities/resource-type.entity';
+import { ResourceEntity } from '../../entities/resource.entity';
 import { Repository, In } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable } from '@nestjs/common';

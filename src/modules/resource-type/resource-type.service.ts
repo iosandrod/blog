@@ -1,6 +1,6 @@
-import { ResourceEntity } from '../resource/resource.entity';
+import { ResourceEntity } from '../../entities/resource.entity';
 import { Repository, In } from 'typeorm';
-import { ResourceTypeEntity } from './resource-type.entity';
+import { ResourceTypeEntity } from '../../entities/resource-type.entity';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 

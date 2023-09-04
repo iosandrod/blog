@@ -1,5 +1,5 @@
-import { ToolsEntity } from './../tools/tools.entity';
-import { ToolsTypeEntity } from './tools-type.entity';
+import { ToolsEntity } from '../../entities/tools.entity';
+import { ToolsTypeEntity } from '../../entities/tools-type.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { ToolsTypeController } from './tools-type.controller';

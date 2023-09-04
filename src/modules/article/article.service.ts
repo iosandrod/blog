@@ -1,8 +1,8 @@
 import { CollectEntity } from './../collect/collect.entity';
-import { UserEntity } from './../user/user.entity';
+import { UserEntity } from '../../entities/user.entity';
 import { CommonService } from './../common/common.service';
 import { Repository, LessThan } from 'typeorm';
-import { ArticleEntity } from './article.entity';
+import { ArticleEntity } from '../../entities/article.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { Like, In } from 'typeorm';

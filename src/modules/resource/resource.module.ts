@@ -1,5 +1,5 @@
-import { ResourceTypeEntity } from '../resource-type/resource-type.entity';
-import { ResourceEntity } from './resource.entity';
+import { ResourceTypeEntity } from '../../entities/resource-type.entity';
+import { ResourceEntity } from '../../entities/resource.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';
 import { ResourceController } from './resource.controller';

@@ -1,13 +1,13 @@
 import { FriendLinksEntity } from './../friend-links/friend-links.entity';
 import { CommentEntity } from './../comment/comment.entity';
 import { formatBaiduReq } from './../../utils/date';
-import { ArticleEntity } from './../article/article.entity';
+import { ArticleEntity } from '../../entities/article.entity';
 import { Injectable } from '@nestjs/common';
 import { Repository, IsNull } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import axios from 'axios';
-import { TypeEntity } from '../type/type.entity';
-import { UserEntity } from '../user/user.entity';
+import { TypeEntity } from '../../entities/type.entity';
+import { UserEntity } from '../../entities/user.entity';
 
 @Injectable()
 export class StatisticsService {

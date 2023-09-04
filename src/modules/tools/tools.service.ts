@@ -1,5 +1,5 @@
-import { ToolsTypeEntity } from './../tools-type/tools-type.entity';
-import { ToolsEntity } from './tools.entity';
+import { ToolsTypeEntity } from '../../entities/tools-type.entity';
+import { ToolsEntity } from '../../entities/tools.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import axios from 'axios';

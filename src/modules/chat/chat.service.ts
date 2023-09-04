@@ -1,10 +1,10 @@
-import { RoomEntity } from './room.entity';
+import { RoomEntity } from '../../entities/room.entity';
 import { requestHtml } from './../../utils/spider';
-import { UserEntity } from './../user/user.entity';
+import { UserEntity } from '../../entities/user.entity';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { In, Repository } from 'typeorm';
-import { MessageEntity } from './message.entity';
+import { MessageEntity } from '../../entities/message.entity';
 
 @Injectable()
 export class ChatService {

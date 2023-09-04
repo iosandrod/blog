@@ -1,4 +1,4 @@
-import { ArticleEntity } from './../article/article.entity';
+import { ArticleEntity } from '../../entities/article.entity';
 import { CollectEntity } from './collect.entity';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Module } from '@nestjs/common';

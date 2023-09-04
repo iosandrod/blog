@@ -1,5 +1,5 @@
-import { ArticleEntity } from './../article/article.entity';
-import { TypeEntity } from './type.entity';
+import { ArticleEntity } from '../../entities/article.entity';
+import { TypeEntity } from '../../entities/type.entity';
 import { Injectable, HttpException, HttpStatus } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
