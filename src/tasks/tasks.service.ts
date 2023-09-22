@@ -12,4 +12,9 @@ export class TasksService {
 	// handleCron() {
 	//   this.logger.debug('Called when the second is 45');
 	// }
+	// @Interval(2000)
+	// @Cron('45 * * * * *')
+	// handleTimeout() {
+	// 	console.log('定时器 timeout');
+	// }
 }
