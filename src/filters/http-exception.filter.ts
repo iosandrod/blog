@@ -1,15 +1,16 @@
 import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus, Logger } from '@nestjs/common';
 import { formatDate } from 'src/utils';
-
+//公共的响应错误处理拦截
+//
 @Catch(HttpException)
 export class HttpExceptionFilter implements ExceptionFilter {
 	catch(exception: HttpException, host: ArgumentsHost) {
-		const ctx = host.switchToHttp();//获取主体
-		//HttpArgumentsHost 获取http请求的一个类 
+		const ctx = host.switchToHttp(); //获取主体
+		//HttpArgumentsHost 获取http请求的一个类
 		//ArgumentsHost 更通用的一个请求类
 		const response = ctx.getResponse();
 		const request = ctx.getRequest();
-		const { } = response;
+		const {} = response;
 		const exceptionRes: any = exception.getResponse();
 		/* 正常情况是个对象，为了简写可以只传入一个字符串错误即可 */
 		const message = exceptionRes.constructor === Object ? exceptionRes['message'] : exceptionRes;

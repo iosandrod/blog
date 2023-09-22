@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 interface Response<T> {
 	data: T;
 }
+//全局的相应拦截器
 @Injectable()
 export class TransformInterceptor<T> implements NestInterceptor<T, Response<T>> {
 	intercept(context: ExecutionContext, next: CallHandler<T>): Observable<Response<T>> {

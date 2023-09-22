@@ -12,13 +12,10 @@ export class MusicEntity extends BaseEntity {
 
 	@Column()
 	mid: number;
-
 	@Column()
 	duration: number;
-
 	@Column({ length: 300 })
 	singer: string;
-
 	@Column({ default: 0 })
 	hot: number;
 }

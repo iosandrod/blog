@@ -1,13 +1,14 @@
 {
-  "eslint.validate": ["html", "vue", "javascript", "jsx"],
-  "emmet.syntaxProfiles": {
-    "vue-html": "html",
-    "vue": "html"
-   },
-  "eslint.alwaysShowStatus": true,
-  "eslint.quiet": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true,
-    "source.fixAll": true,
-   }
- }
+	"eslint.validate": ["html", "vue", "javascript", "jsx"],
+	"emmet.syntaxProfiles": {
+		"vue-html": "html",
+		"vue": "html"
+	},
+	"eslint.alwaysShowStatus": true,
+	"eslint.quiet": true,
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true,
+		"source.fixAll": true
+	},
+	"cSpell.words": ["sdorderservice"]
+}

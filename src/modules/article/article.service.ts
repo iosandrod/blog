@@ -17,7 +17,6 @@ export class ArticleService {
 		private readonly CollectModel: Repository<CollectEntity>,
 		private readonly CommonService: CommonService,
 	) {}
-
 	/**
 	 * @desc 设置新增的时候需要如果没有orderId 需要自己追加 追加规则是
 	 *       1： 大于 5000 的id视为置顶文章

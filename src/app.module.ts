@@ -29,6 +29,7 @@ import { StatisticsModule } from './modules/statistics/statistics.module';
 import { ToolsModule } from './modules/tools/tools.module';
 import { ToolsTypeModule } from './modules/tools-type/tools-type.module';
 import { CollectModule } from './modules/collect/collect.module';
+import { t_SdOrderModule } from './modules/tSdOrder/t_SdOrder.module';
 
 @Module({
 	imports: [
@@ -69,7 +70,8 @@ import { CollectModule } from './modules/collect/collect.module';
 		ToolsModule,
 		ToolsTypeModule,
 		CollectModule,
+		t_SdOrderModule,
 	],
 	providers: [],
 })
-export class AppModule { }
+export class AppModule {}

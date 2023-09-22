@@ -7,14 +7,11 @@ export class AuthGuard implements CanActivate {
 	async canActivate(context: ExecutionContext): Promise<boolean> {
 		const request = context.switchToHttp().getRequest();
 		const { headers, path, route } = context.switchToRpc().getData();
-		// return true;
-		// whiteList
 		if (whiteList.includes(path)) {
 			return true;
 		}
 		const isGet = route.methods.get;
 		const token = headers.token || request.headers.token;
-		console.log(isGet, 'testIsGet');
 		if (token) {
 			const payload = await this.verifyToken(token, secret);
 			const { role } = payload;
@@ -53,7 +50,6 @@ export class AuthGuard implements CanActivate {
 				if (error) {
 					throw new HttpException('身份验证失败', HttpStatus.UNAUTHORIZED);
 				} else {
-					console.log(payload, 'testPayload');
 					resolve(payload);
 				}
 			});
